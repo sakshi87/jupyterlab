@@ -10,9 +10,10 @@ jobs:
     - &default
       env: DESC="browser test"
       before_install:
-        - wget https://nodejs.org/dist/v12.16.1/node-v12.16.1-linux-arm64.tar.gz -O node-12.tar.gz
-        - tar -xf node-12.tar.gz
-        - export PATH=${pwd}/node-12/bin:$PATH
+        - wget https://nodejs.org/dist/v12.16.1/node-v12.16.1-linux-arm64.tar.gz -O node-12.tar.gz -P $HOME
+        - tar -xf $HOME/node-12.tar.gz
+        - export PATH=$HOME/node-12/bin:$PATH
+        - echo $PATH
         - node -v
         - sudo apt-get install -y chromium-browser
         - export CHROME_BIN=/usr/bin/chromium-browser
