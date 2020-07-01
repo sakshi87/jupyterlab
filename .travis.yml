@@ -16,4 +16,5 @@ jobs:
         - python -m pip install -e .
         - npm install
         - npm run build
+        - pip install --pre jupyterlab
       script: python -m jupyterlab.browser_check
