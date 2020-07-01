@@ -1,4 +1,4 @@
-language: generic
+language: python
 os:
   - linux
 arch: arm64
@@ -12,10 +12,6 @@ jobs:
       before_install:
         - sudo apt-get install -y chromium-browser
         - export CHROME_BIN=/usr/bin/chromium-browser
-        - sudo apt install software-properties-common
-        - sudo add-apt-repository ppa:deadsnakes/ppa
-        - sudo apt install python3.7
-        - python3.7 --version
       install:
         - python -m pip install -e .
         - npm install
