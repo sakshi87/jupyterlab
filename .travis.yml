@@ -10,8 +10,8 @@ jobs:
     - &default
       env: DESC="browser test"
       before_install:
-        - wget https://nodejs.org/dist/v12.16.1/node-v12.16.1-linux-arm64.tar.gz -O node-12.tar.gz -P $HOME
-        - tar -xf $HOME/node-12.tar.gz
+        - wget https://nodejs.org/dist/v12.16.1/node-v12.16.1-linux-arm64.tar.gz -O node-12.tar.gz
+        - tar -xf node-12.tar.gz -C $HOME
         - export PATH=$HOME/node-12/bin:$PATH
         - echo $PATH
         - node -v
