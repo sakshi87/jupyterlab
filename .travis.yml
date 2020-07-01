@@ -1,4 +1,4 @@
-language: generic
+language: python
 os:
   - linux
 arch: arm64
@@ -9,12 +9,13 @@ jobs:
 
     - &default
       env: DESC="browser test"
-      node_js: 12
-      python: 3.7
       before_install:
+        - wget https://nodejs.org/dist/v12.16.1/node-v12.16.1-linux-arm64.tar.gz -O node-12.tar.gz
+        - tar -xf node-12.tar.gz
+        - export PATH=${pwd}/node-12/bin:$PATH
+        - node -v
         - sudo apt-get install -y chromium-browser
         - export CHROME_BIN=/usr/bin/chromium-browser
-        - node -v
       install:
         - python -m pip install -e .
         - npm install
