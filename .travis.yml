@@ -11,6 +11,7 @@ jobs:
       env: DESC="browser test"
       before_install:
         - sudo apt-get install -y chromium-browser
+        - sudo apt-get install -y nodejs npm
         - export CHROME_BIN=/usr/bin/chromium-browser
       install:
         - python -m pip install -e .
