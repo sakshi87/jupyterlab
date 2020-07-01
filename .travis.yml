@@ -10,7 +10,7 @@ jobs:
     - &default
       env: DESC="browser test"
       before_install:
-        - apt-get install -y chromium-browser
+        - sudo apt-get install -y chromium-browser
         - export CHROME_BIN=/usr/bin/chromium-browser
       install:
         - python -m pip install -e .
